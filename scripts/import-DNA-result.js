@@ -187,6 +187,29 @@ function ROZPOCZECIE_IMPORTU_DO_NOWEJ_protBAZY() {
     const vertex_HAPLOMOM_log   = path.resolve(RAW_db_URL, "DNAGedcom_FTDNA_HAPLOMOM.vertex.log");
     const edge_SOURCE_log       = path.resolve(RAW_db_URL, "DNAGedcom_FTDNA_SOURCE.edge.log");    
     const edge_MatchATDNA_log   = path.resolve(RAW_db_URL, "DNAGedcom_FTDNA_MatchATDNA.edge.log");
+    const edge_MatchChr01_log   = path.resolve(RAW_db_URL, "DNAGedcom_FTDNA_MatchChr01.edge.log");
+    const edge_MatchChr02_log   = path.resolve(RAW_db_URL, "DNAGedcom_FTDNA_MatchChr02.edge.log");
+    const edge_MatchChr03_log   = path.resolve(RAW_db_URL, "DNAGedcom_FTDNA_MatchChr03.edge.log");
+    const edge_MatchChr04_log   = path.resolve(RAW_db_URL, "DNAGedcom_FTDNA_MatchChr04.edge.log");
+    const edge_MatchChr05_log   = path.resolve(RAW_db_URL, "DNAGedcom_FTDNA_MatchChr05.edge.log");
+    const edge_MatchChr06_log   = path.resolve(RAW_db_URL, "DNAGedcom_FTDNA_MatchChr06.edge.log");
+    const edge_MatchChr07_log   = path.resolve(RAW_db_URL, "DNAGedcom_FTDNA_MatchChr07.edge.log");
+    const edge_MatchChr08_log   = path.resolve(RAW_db_URL, "DNAGedcom_FTDNA_MatchChr08.edge.log");
+    const edge_MatchChr09_log   = path.resolve(RAW_db_URL, "DNAGedcom_FTDNA_MatchChr09.edge.log");
+    const edge_MatchChr10_log   = path.resolve(RAW_db_URL, "DNAGedcom_FTDNA_MatchChr10.edge.log");
+    const edge_MatchChr11_log   = path.resolve(RAW_db_URL, "DNAGedcom_FTDNA_MatchChr11.edge.log");
+    const edge_MatchChr12_log   = path.resolve(RAW_db_URL, "DNAGedcom_FTDNA_MatchChr12.edge.log");
+    const edge_MatchChr13_log   = path.resolve(RAW_db_URL, "DNAGedcom_FTDNA_MatchChr13.edge.log");
+    const edge_MatchChr14_log   = path.resolve(RAW_db_URL, "DNAGedcom_FTDNA_MatchChr14.edge.log");
+    const edge_MatchChr15_log   = path.resolve(RAW_db_URL, "DNAGedcom_FTDNA_MatchChr15.edge.log");
+    const edge_MatchChr16_log   = path.resolve(RAW_db_URL, "DNAGedcom_FTDNA_MatchChr16.edge.log");
+    const edge_MatchChr17_log   = path.resolve(RAW_db_URL, "DNAGedcom_FTDNA_MatchChr17.edge.log");
+    const edge_MatchChr18_log   = path.resolve(RAW_db_URL, "DNAGedcom_FTDNA_MatchChr18.edge.log");
+    const edge_MatchChr19_log   = path.resolve(RAW_db_URL, "DNAGedcom_FTDNA_MatchChr19.edge.log");
+    const edge_MatchChr20_log   = path.resolve(RAW_db_URL, "DNAGedcom_FTDNA_MatchChr20.edge.log");
+    const edge_MatchChr21_log   = path.resolve(RAW_db_URL, "DNAGedcom_FTDNA_MatchChr21.edge.log");
+    const edge_MatchChr22_log   = path.resolve(RAW_db_URL, "DNAGedcom_FTDNA_MatchChr22.edge.log");
+    const edge_MatchChr_X_log   = path.resolve(RAW_db_URL, "DNAGedcom_FTDNA_MatchChr_X.edge.log");
     openSync(vertex_PERSON_log  );
     openSync(vertex_CONTAC_log  );
     openSync(vertex_SOURCE_log  );
@@ -195,12 +218,37 @@ function ROZPOCZECIE_IMPORTU_DO_NOWEJ_protBAZY() {
     openSync(vertex_HAPLOMOM_log);
     openSync(edge_SOURCE_log    );
     openSync(edge_MatchATDNA_log);
+    openSync(edge_MatchChr01_log);
+    openSync(edge_MatchChr02_log);
+    openSync(edge_MatchChr03_log);
+    openSync(edge_MatchChr04_log);
+    openSync(edge_MatchChr05_log);
+    openSync(edge_MatchChr06_log);
+    openSync(edge_MatchChr07_log);
+    openSync(edge_MatchChr08_log);
+    openSync(edge_MatchChr09_log);
+    openSync(edge_MatchChr10_log);
+    openSync(edge_MatchChr11_log);
+    openSync(edge_MatchChr12_log);
+    openSync(edge_MatchChr13_log);
+    openSync(edge_MatchChr14_log);
+    openSync(edge_MatchChr15_log);
+    openSync(edge_MatchChr16_log);
+    openSync(edge_MatchChr17_log);
+    openSync(edge_MatchChr18_log);
+    openSync(edge_MatchChr19_log);
+    openSync(edge_MatchChr20_log);
+    openSync(edge_MatchChr21_log);
+    openSync(edge_MatchChr22_log);
+    openSync(edge_MatchChr_X_log);
     //* Importowanie DNAGedcom_FTDNA_FamilyFinder
     if (get.hasOwnProperty("DNAGedcom_FTDNA_FamilyFinder")) {
+        const START_IMPORT_DNAGedcom_FTDNA_FamilyFinder = new Date();
         for (const KIT in get.DNAGedcom_FTDNA_FamilyFinder) {
             if (get.DNAGedcom_FTDNA_FamilyFinder.hasOwnProperty(KIT)) {
                 const KIT_get = get.DNAGedcom_FTDNA_FamilyFinder[KIT];
-                console.log("uplynelo "+ILEczasuOD(START_WHOisWHO)+" od startu", ">>> ..rozpoczynam import z FamilyFidera ("+KIT_get.NAME+")");
+                const START_IMPORT_KIT = new Date();
+               console.log("uplynelo "+ILEczasuOD(START_WHOisWHO)+" od startu", ">>> ZESTAW (FTDNA FamilyFinder dla "+KIT_get.NAME+") ROZPOCZYNAM IMPRT");
                 //* INFORMACJA O BENEFICJENCIE
                 //TODO  KIT_get.MAIL
                 //TODO  KIT_get.SEX
@@ -221,8 +269,8 @@ function ROZPOCZECIE_IMPORTU_DO_NOWEJ_protBAZY() {
                     TYPE: "root Person"                    
                 });
                 // ------------------------------------------------------------------------------------------------------------------------------------------------------
-                //* Przeglad_Przypasowanych_Osob
-                console.log("uplynelo "+ILEczasuOD(START_WHOisWHO)+" od startu", ">>> ..Przeglad_Przypasowanych_Osob: "+(KIT_get.PART.Przeglad_Przypasowanych_Osob.SIZE/1024).toFixed(2)+"kb");
+                // Przeglad_Przypasowanych_Osob
+                console.log("uplynelo "+ILEczasuOD(START_WHOisWHO)+" od startu", ">>> ..importuje Przeglad_Przypasowanych_Osob: "+(KIT_get.PART.Przeglad_Przypasowanych_Osob.SIZE/1024).toFixed(2)+"kb");
                 CSV_parse(fs.readFileSync(KIT_get.PART.Przeglad_Przypasowanych_Osob.URL), KIT_get.PART.Przeglad_Przypasowanych_Osob.DECODE)
                 .forEach(ROW => {
                     appendJsonTextRowSync(vertex_PERSON_log, {
@@ -255,8 +303,8 @@ function ROZPOCZECIE_IMPORTU_DO_NOWEJ_protBAZY() {
                     });
                     appendJsonTextRowSync(edge_MatchATDNA_log, {
                         from_to: [["vertex_PERSON", KIT_get.GMPx], ["vertex_PERSON", parseInt(ROW["ResultID2"])]],
-                        TOTALcM: ROW["Shared cM"],
-                        BLOCKcM: ROW["Longest Block"],
+                        TOTALcM: parseFloat(ROW["Shared cM"]),
+                        BLOCKcM: parseFloat(ROW["Longest Block"]),
                         RELATIONSHIP: {
                             RANGE: ROW["Relationship Range"],
                             SUGGE: ROW["Suggested Relationship"],
@@ -276,16 +324,153 @@ function ROZPOCZECIE_IMPORTU_DO_NOWEJ_protBAZY() {
                     //TODO     from_to: [["vertex_PERSON", KIT_get.GMPx], ["vertex_NOTES", parseInt(ROW["ResultID2"])]],                        
                     //TODO }
                 });
-                
+                // ------------------------------------------------------------------------------------------------------------------------------------------------------
+                // Szczegoly_Przypasowanych_Osob
+                console.log("uplynelo "+ILEczasuOD(START_WHOisWHO)+" od startu", ">>> ..importuje Szczegoly_Przypasowanych_Osob: "+(KIT_get.PART.Szczegoly_Przypasowanych_Osob.SIZE/1024).toFixed(2)+"kb");
+                CSV_parse(fs.readFileSync(KIT_get.PART.Szczegoly_Przypasowanych_Osob.URL), KIT_get.PART.Szczegoly_Przypasowanych_Osob.DECODE)
+                .forEach(ROW => {
+                    function apendEdgeChr(AA, BB, CC, DD, EE, FF) {
+                        let ii = {
+                            from_to: [["vertex_PERSON", parseInt(AA)], ["vertex_PERSON", parseInt(BB)]],
+                            POSITION: [parseInt(CC), parseInt(DD)],
+                            SIZE: {
+                                cM: parseFloat(EE),
+                                SNPs: parseInt(FF)
+                            },
+                            BY: "FTDNA"
+                        };
+                        return ii;                        
+                    }
+                    appendJsonTextRowSync(vertex_PERSON_log, {
+                        ID: parseInt(ROW["KitID"]),
+                        name: {
+                            full: ROW["Full Name"]
+                        }
+                    });
+                    appendJsonTextRowSync(edge_SOURCE_log,  {
+                        from_to: [["vertex_SOURCE", parseInt(KIT_get.GMPx)], ["vertex_PERSON", parseInt(ROW["KitID"])]],
+                        TYPE: "match Person"                  
+                    });
+                    switch (ROW["Chromosome"]) {
+                        case "1":
+                        appendJsonTextRowSync(edge_MatchChr01_log, apendEdgeChr(KIT_get.GMPx, ROW["KitID"], ROW["Start"], ROW["End"], ROW["cM"], ROW["SNPS"]));                            
+                            break;                    
+                        case "2":
+                        appendJsonTextRowSync(edge_MatchChr02_log, apendEdgeChr(KIT_get.GMPx, ROW["KitID"], ROW["Start"], ROW["End"], ROW["cM"], ROW["SNPS"]));     
+                            break;                    
+                        case "3":
+                        appendJsonTextRowSync(edge_MatchChr03_log, apendEdgeChr(KIT_get.GMPx, ROW["KitID"], ROW["Start"], ROW["End"], ROW["cM"], ROW["SNPS"]));     
+                            break;                    
+                        case "4":
+                        appendJsonTextRowSync(edge_MatchChr04_log, apendEdgeChr(KIT_get.GMPx, ROW["KitID"], ROW["Start"], ROW["End"], ROW["cM"], ROW["SNPS"]));     
+                            break;                    
+                        case "5":
+                        appendJsonTextRowSync(edge_MatchChr05_log, apendEdgeChr(KIT_get.GMPx, ROW["KitID"], ROW["Start"], ROW["End"], ROW["cM"], ROW["SNPS"]));     
+                            break;         
+                        case "6":
+                        appendJsonTextRowSync(edge_MatchChr06_log, apendEdgeChr(KIT_get.GMPx, ROW["KitID"], ROW["Start"], ROW["End"], ROW["cM"], ROW["SNPS"]));     
+                            break;                    
+                        case "7":
+                        appendJsonTextRowSync(edge_MatchChr07_log, apendEdgeChr(KIT_get.GMPx, ROW["KitID"], ROW["Start"], ROW["End"], ROW["cM"], ROW["SNPS"]));     
+                            break;                    
+                        case "8":
+                        appendJsonTextRowSync(edge_MatchChr08_log, apendEdgeChr(KIT_get.GMPx, ROW["KitID"], ROW["Start"], ROW["End"], ROW["cM"], ROW["SNPS"]));     
+                            break;                    
+                        case "9":
+                        appendJsonTextRowSync(edge_MatchChr09_log, apendEdgeChr(KIT_get.GMPx, ROW["KitID"], ROW["Start"], ROW["End"], ROW["cM"], ROW["SNPS"]));     
+                            break;                    
+                        case "10":
+                        appendJsonTextRowSync(edge_MatchChr10_log, apendEdgeChr(KIT_get.GMPx, ROW["KitID"], ROW["Start"], ROW["End"], ROW["cM"], ROW["SNPS"]));     
+                            break;
+                        case "11":
+                        appendJsonTextRowSync(edge_MatchChr11_log, apendEdgeChr(KIT_get.GMPx, ROW["KitID"], ROW["Start"], ROW["End"], ROW["cM"], ROW["SNPS"]));                            
+                            break;                    
+                        case "12":
+                        appendJsonTextRowSync(edge_MatchChr12_log, apendEdgeChr(KIT_get.GMPx, ROW["KitID"], ROW["Start"], ROW["End"], ROW["cM"], ROW["SNPS"]));     
+                            break;                    
+                        case "13":
+                        appendJsonTextRowSync(edge_MatchChr13_log, apendEdgeChr(KIT_get.GMPx, ROW["KitID"], ROW["Start"], ROW["End"], ROW["cM"], ROW["SNPS"]));     
+                            break;                    
+                        case "14":
+                        appendJsonTextRowSync(edge_MatchChr14_log, apendEdgeChr(KIT_get.GMPx, ROW["KitID"], ROW["Start"], ROW["End"], ROW["cM"], ROW["SNPS"]));     
+                            break;                    
+                        case "15":
+                        appendJsonTextRowSync(edge_MatchChr15_log, apendEdgeChr(KIT_get.GMPx, ROW["KitID"], ROW["Start"], ROW["End"], ROW["cM"], ROW["SNPS"]));     
+                            break;         
+                        case "16":
+                        appendJsonTextRowSync(edge_MatchChr16_log, apendEdgeChr(KIT_get.GMPx, ROW["KitID"], ROW["Start"], ROW["End"], ROW["cM"], ROW["SNPS"]));     
+                            break;                    
+                        case "17":
+                        appendJsonTextRowSync(edge_MatchChr17_log, apendEdgeChr(KIT_get.GMPx, ROW["KitID"], ROW["Start"], ROW["End"], ROW["cM"], ROW["SNPS"]));     
+                            break;                    
+                        case "18":
+                        appendJsonTextRowSync(edge_MatchChr18_log, apendEdgeChr(KIT_get.GMPx, ROW["KitID"], ROW["Start"], ROW["End"], ROW["cM"], ROW["SNPS"]));     
+                            break;                    
+                        case "19":
+                        appendJsonTextRowSync(edge_MatchChr19_log, apendEdgeChr(KIT_get.GMPx, ROW["KitID"], ROW["Start"], ROW["End"], ROW["cM"], ROW["SNPS"]));     
+                            break;                    
+                        case "20":
+                        appendJsonTextRowSync(edge_MatchChr20_log, apendEdgeChr(KIT_get.GMPx, ROW["KitID"], ROW["Start"], ROW["End"], ROW["cM"], ROW["SNPS"]));     
+                            break;                    
+                        case "21":
+                        appendJsonTextRowSync(edge_MatchChr21_log, apendEdgeChr(KIT_get.GMPx, ROW["KitID"], ROW["Start"], ROW["End"], ROW["cM"], ROW["SNPS"]));     
+                            break;                    
+                        case "22":
+                        appendJsonTextRowSync(edge_MatchChr22_log, apendEdgeChr(KIT_get.GMPx, ROW["KitID"], ROW["Start"], ROW["End"], ROW["cM"], ROW["SNPS"]));     
+                            break;                    
+                        case "98":
+                        appendJsonTextRowSync(edge_MatchChr_X_log, apendEdgeChr(KIT_get.GMPx, ROW["KitID"], ROW["Start"], ROW["End"], ROW["cM"], ROW["SNPS"]));     
+                            break;                    
+                    }
+                });
+                // ------------------------------------------------------------------------------------------------------------------------------------------------------
+                // Macierz_Przypasowanych_Osob
+                console.log("uplynelo "+ILEczasuOD(START_WHOisWHO)+" od startu", ">>> ..importuje Macierz_Przypasowanych_Osob: "+(KIT_get.PART.Macierz_Przypasowanych_Osob.SIZE/1024).toFixed(2)+"kb");
+                CSV_parse(fs.readFileSync(KIT_get.PART.Macierz_Przypasowanych_Osob.URL), KIT_get.PART.Macierz_Przypasowanych_Osob.DECODE)
+                .forEach(ROW => {
+                    appendJsonTextRowSync(vertex_PERSON_log, {
+                        ID: parseInt(ROW["Profile KitID"]),
+                        name: {
+                            full: ROW["Profile Name"]
+                        }
+                    });
+                    appendJsonTextRowSync(edge_SOURCE_log,  {
+                        from_to: [["vertex_SOURCE", parseInt(KIT_get.GMPx)], ["vertex_PERSON", parseInt(ROW["Profile KitID"])]],
+                        TYPE: "match Person"                  
+                    });
+                    appendJsonTextRowSync(vertex_PERSON_log, {
+                        ID: parseInt(ROW["Match KitID"]),
+                        name: {
+                            full: ROW["Full Name"]
+                        }
+                    });
+                    appendJsonTextRowSync(edge_SOURCE_log,  {
+                        from_to: [["vertex_SOURCE", parseInt(KIT_get.GMPx)], ["vertex_PERSON", parseInt(ROW["Match KitID"])]],
+                        TYPE: "match Person"                  
+                    });
+                    appendJsonTextRowSync(vertex_CONTAC_log, {
+                        ID: parseInt(ROW["Match KitID"]),
+                        EMAIL: ROW["E-Mail"]
+                    });
+                    appendJsonTextRowSync(edge_MatchATDNA_log, {
+                        from_to: [["vertex_PERSON", parseInt(ROW["Profile KitID"])], ["vertex_PERSON", parseInt(ROW["Match KitID"])]],
+                        TOTALcM: parseFloat(ROW["Total cM"]),
+                        BLOCKcM: parseFloat(ROW["Max cM"]),
+                        BY: "FTDNA"
+                    });
 
+                });
 
-
-
-                //console.log(get.DNAGedcom_FTDNA_FamilyFinder[KIT].PART.Przeglad_Przypasowanych_Osob);
-
+                //TODO console.log(CSV_parse(fs.readFileSync(KIT_get.PART.Drzewa_Przypasowanych_Osob_Osob.URL), KIT_get.PART.Drzewa_Przypasowanych_Osob.DECODE)[1]);
+                console.log("uplynelo "+ILEczasuOD(START_WHOisWHO)+" od startu", ">>> ZAKONCZONO IMPORT ZESTAWU dla"+KIT_get.NAME+"; trwalo to "+ ILEczasuOD(START_IMPORT_KIT));
             }
         }
-
+          console.log("################################################################################################################");
+          console.log("");
+          console.log("uplynelo "+ILEczasuOD(START_WHOisWHO)+" od startu", ">>> IMPORTOWANIE ZESTAWOW DNAGdcom_FTDA_FamilyFinder TRWALO "+ ILEczasuOD(START_IMPORT_DNAGedcom_FTDNA_FamilyFinder));
+          console.log("UWAGA, pominieto import drzew, ta funksjonalnosc wymaga dopracowania");
+          console.log("");
+          console.log("################################################################################################################");
     }
 
     
