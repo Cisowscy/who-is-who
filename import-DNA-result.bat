@@ -1,0 +1,1 @@
+node ./scripts/import-DNA-result.js  --max_old_space_size=22528

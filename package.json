@@ -1,0 +1,31 @@
+{
+  "name": "who-is-who",
+  "version": "1.0.1-alpha.1",
+  "description": "tool for Genetic Genealogy, copyright Jan R. Cisowski",
+  "scripts": {
+    "import-DNA-result": "node ./scripts/import-DNA-result.js  --max_old_space_size=22528"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cisowscy/who-is-who.git"
+  },
+  "keywords": [
+    "DNA"
+  ],
+  "author": "Jan R. Cisowski",
+  "license": "CC-BY-NC-SA-4.0",
+  "bugs": {
+    "url": "https://github.com/Cisowscy/who-is-who/issues"
+  },
+  "homepage": "https://github.com/Cisowscy/who-is-who#readme",
+  "dependencies": {
+    "core-js": "^2.5.7",
+    "csv": "^3.1.0",
+    "fs-extra": "^7.0.0",
+    "moment": "^2.22.2",
+    "moment-duration-format": "^2.2.2"
+  },
+  "devDependencies": {
+    "eslint": "^5.4.0"
+  }
+}
